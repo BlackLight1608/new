@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  {% load staticfiles  %}
+      <title>RESULT ANALYSIS</title>
+  <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "css/jumbotron.css" %}" rel="stylesheet">
+        <!-- Bootstrap theme -->
+      <!-- Bootstrap theme -->
+      </head>
+
+  <body>
+  <div class="jumbotron">
+      <center> <form method="post" enctype="multipart/form-data"></center>
+      {% csrf_token %}
+
+      <input type="file" name="file">
+      <button type="submit">Upload</button>
+    </form>
+
+    <p>Uploaded files:</p>
+      <ul>
+        {% for obj in files %}
+          <li>
+            <a href="{{ obj.files.url }}">{{ obj.files.name }}</a>
+
+          </li>
+        {% endfor %}
+      </ul>
+      <a href="/analyze/"><button class="btn btn-primary">Analyze</button></a>
+      </div>
+  </body>
+</html>

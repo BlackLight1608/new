@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Update</title>
+<style>
+a{
+  text-decoration:none;
+  color:green;
+  border:1px solid green;
+  padding : 5px 3px 5px 3px;
+  text-align: center;
+}
+a:hover{
+  color:white;
+  background-color: green;
+}
+{% load staticfiles %}
+
+</style>
+    </head>
+    <body>
+      <form action="{% url 'update' %}" method="POST">
+        {% csrf_token %}
+        <label for="workbk">Name of the file :</label><br>
+        <input type="text" name="workbk" id='workbk' required/>
+        <br><br>
+
+        <label for="reg">Enter the register no . :</label><br>
+        <input type="text" name="reg" id='reg' required/>
+        <br><br>
+
+
+        <label for="sub">Enter the code of subject :</label><br>
+        <input type="text" name="sub" id='sub' required/>
+        <br><br>
+
+        <label for="grd">Enter the Grade :</label><br>
+        <input type="text" name="grd" id='grd' required/>
+        <br><br>
+        <button type="submit" class="btn btn-primary">SUBMIT</button>
+
+
+
+      </form>
+      <br><br><br>
+      <a href="/update" ><button class="btn btn-primary">Wanna update another data : </button></a>
+
+
+    </body>
+  </html>
